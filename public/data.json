@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Experience ultimate clarity and style with our UV Protection Sunglasses. These feature polarized lenses that block 100% of harmful UVA and UVB rays, perfect for long days on the sand.",
+    "image": "https://assets.ajio.com/medias/sys_master/root/20230616/MxLh/648c641f42f9e729d7477b0d/-473Wx593H-466281335-black-MODEL.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Quick-Dry Beach Towel",
+    "brand": "AquaSoft",
+    "price": 22,
+    "rating": 4.5,
+    "stock": 25,
+    "description": "Say goodbye to heavy, damp towels. Our AquaSoft microfiber technology absorbs moisture instantly and dries in minutes under the sun. Sand-resistant and ultra-portable.",
+    "image": "https://image-cdn.ubuy.com/sun-y-waffle-microfiber-beach-towel/400_400_100/681db47a4708586cbd0a1572.jpg",
+    "category": "Outdoor"
+  },
+  {
+    "id": 3,
+    "name": "Mineral Sunscreen SPF 50",
+    "brand": "PureSun",
+    "price": 18,
+    "rating": 4.4,
+    "stock": 50,
+    "description": "Broad-spectrum physical barrier against intense summer heat. Reef-safe, non-greasy, and enriched with organic aloe vera for skin hydration.",
+    "image": "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blz/blz04645/y/16.jpg",
+    "category": "Skincare"
+  },
+  {
+    "id": 4,
+    "name": "Insulated Cooler Bag",
+    "brand": "ChillMaster",
+    "price": 35,
+    "rating": 4.7,
+    "stock": 15,
+    "description": "Keep your drinks ice-cold for up to 12 hours. Features triple-layer thermal insulation and a leak-proof lining, perfect for beach picnics and boat trips.",
+    "image": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/9da43a6c-0afb-4416-8cdf-5b0a6f44a573.__CR0,0,970,600_PT0_SX970_V1___.png",
+    "category": "Outdoor"
+  },
+  {
+    "id": 5,
+    "name": "Wide-Brim Straw Hat",
+    "brand": "IslandVibe",
+    "price": 28,
+    "rating": 4.9,
+    "stock": 8,
+    "description": "Hand-woven from sustainable straw. The extra-wide brim provides superior shade for your face and neck while keeping you cool with a breathable design.",
+    "image": "https://img.drz.lazcdn.com/static/bd/p/615bbf39bc31e1218f119e4bdaefca82.jpg_720x720q80.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 6,
+    "name": "Waterproof Phone Pouch",
+    "brand": "SafeDive",
+    "price": 12,
+    "rating": 4.6,
+    "stock": 100,
+    "description": "Capture every underwater memory. IPX8 certified waterproof up to 100 feet with a crystal-clear window that maintains full touch-screen sensitivity.",
+    "image": "https://justincasett.com/cdn/shop/products/image_cd4651ce-9bde-4987-85b1-25924c501c95.webp?v=1750945806",
+    "category": "Gadgets"
+  }
+]

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Foot = () => {
     return (
-     <footer className="footer p-10 bg-sky-200 text-black border-t border-sky-500 flex flex-col md:flex-row justify-between">
+     <footer className="footer p-10 bg-sky-200 text-black border-t border-sky-500 flex flex-col md:flex-row justify-around">
  
   <nav>
     <h6 className="footer-title opacity-100 ">Summer Shop</h6>
