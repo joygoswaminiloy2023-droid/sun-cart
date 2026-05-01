@@ -1,5 +1,7 @@
+
 import Card from "../Components/Card";
 import Hero from "../Components/Hero";
+import SummerCare from "../Components/SummerCare";
 import { product } from "../db/db";
 
 export default async function Home() {
@@ -28,6 +30,13 @@ export default async function Home() {
         </div>
         </div>
 
+ <div>
+        <h1 className="text-3xl font-bold mb-10 text-center md:text-left">Popular Products</h1>
+    
+     
+         <SummerCare></SummerCare>
+       
+        </div>
 
 
       </div>
