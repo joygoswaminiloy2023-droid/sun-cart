@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaGoogle, FaLock } from "react-icons/fa";
 
 
 const Login = () => {
@@ -67,6 +67,23 @@ const Login = () => {
           </p>
 
         </form>
+
+
+<div className="relative flex items-center py-2">
+            <div className="grow border-t border-white/30"></div>
+            <span className="shrink mx-4 text-white text-xs uppercase tracking-widest font-semibold">Or continue with</span>
+            <div className="grow border-t border-white/30"></div>
+          </div>
+
+          <div className="flex gap-4">
+            <button 
+              type="button" 
+              className="flex-1 flex items-center justify-center gap-2 bg-sky-400 hover:bg-yellow-400 text-white py-2 rounded-lg transition-all active:scale-95 shadow-sm font-medium"
+            >
+              <FaGoogle className="text-white" />Google
+            </button>
+          </div>
+
       </div>
     </div>
   );

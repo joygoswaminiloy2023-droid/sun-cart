@@ -1,6 +1,7 @@
 import React from 'react';
 import { product } from '../../db/db'
 import Details_card from '@/app/Components/Details_card';
+import { notFound } from 'next/navigation';
 
 const Details = async({params}) => {
     const res=await params;
@@ -12,7 +13,7 @@ const Details = async({params}) => {
 const singleproduct=products.find(p=>p.id===product_id)
 
 if(!singleproduct){
-    return <h1>Product Not Found</h1>
+    return notFound();
 }
     
     return (

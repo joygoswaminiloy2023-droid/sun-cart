@@ -54,7 +54,7 @@ const Details_card = ({singleproduct}) => {
           disabled={stock === 0}
           className={`px-10 py-4 rounded-xl font-bold transition-all shadow-md active:scale-95
             ${stock > 0 
-              ? 'bg-gray-950 text-white hover:bg-gray-800 shadow-gray-200' 
+              ? 'bg-yellow-400 text-white hover:bg-sky-400 shadow-gray-200' 
               : 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none'
             }`}
         >
