@@ -8,7 +8,7 @@ import Summervacation from "../../../public/animation/Summer vacation.json";
 const Hero = () => {
 
   return (
-    <div className="relative w-full overflow-hidden bg-sky-400 rounded-3xl mt-8 shadow-2xl min-h-[500px] md:min-h-[600px]">
+    <div className="relative w-full overflow-hidden bg-sky-400   shadow-2xl min-h-125 md:min-h-150">
       
       {/* 1. Background Image Layer */}
       <div className="absolute inset-0 z-0">

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaRegStar } from 'react-icons/fa';
 import {  MdStar } from 'react-icons/md';
 
@@ -49,9 +50,9 @@ const Card = ({ product }) => {
 
         
         <div className="card-actions">
-          <button className="btn btn-block bg-yellow-500 hover:bg-orange-400 border-none text-white font-bold transition-colors">
+          <Link href={`/${product.id}`} className="btn btn-block bg-yellow-500 hover:bg-orange-400 border-none text-white font-bold transition-colors">
             View Details
-          </button>
+          </Link >
         </div>
       </div>
     </div>
