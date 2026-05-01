@@ -1,18 +1,31 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Nav = () => {
-  // Navigation Links - Cleaned up classes for better menu behavior
+const path=usePathname();
   const navLinks = (
-    <>
+      <>
       <li>
-        <Link href="/" className="hover:text-yellow-500 font-semibold transition-colors">
+        <Link
+          href="/"
+          className={`hover:text-yellow-500 font-semibold transition-colors ${
+            path === "/" ? "border-b-2 border-sky-500" : ""
+          }`}
+        >
           Home
         </Link>
       </li>
+
       <li>
-        <Link href="/products" className="hover:text-yellow-500 font-semibold transition-colors">
+        <Link
+          href="/products"
+          className={`hover:text-yellow-500 font-semibold transition-colors ${
+            path === "/products" ? "border-b-2 border-sky-500" : ""
+          }`}
+        >
           Products
         </Link>
       </li>
