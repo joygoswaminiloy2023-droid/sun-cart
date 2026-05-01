@@ -3,17 +3,9 @@ import Image from 'next/image';
 import Lottie from "lottie-react";
 import { PiSunHorizonDuotone } from 'react-icons/pi';
 import Summervacation from "../../../public/animation/Summer vacation.json";
-import Marquee from 'react-fast-marquee';
-import { GoDotFill } from 'react-icons/go';
+
 
 const Hero = () => {
-  const products = [
-    { name: "Sunglasses" },
-    { name: "Beach Towels" },
-    { name: "Swimwear" },
-    { name: "Sunscreen" },
-    { name: "Palm Hats" },
-  ];
 
   return (
     <div className="relative w-full overflow-hidden bg-sky-400 rounded-3xl mt-8 shadow-2xl min-h-[500px] md:min-h-[600px]">
