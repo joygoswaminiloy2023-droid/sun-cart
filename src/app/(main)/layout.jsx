@@ -3,7 +3,7 @@ import Nav from "@/app/Components/Nav";
 
 const mainlayout = ({children}) => {
     return (
-        <div className=''>
+        <div className='bg-sky-50'>
             <Nav></Nav>
             {children}
             <Foot></Foot>

@@ -12,7 +12,7 @@ const path=usePathname();
         <Link
           href="/"
           className={`hover:text-yellow-500 font-semibold transition-colors ${
-            path === "/" ? "border-b-2 border-sky-500" : ""
+            path === "/" ? "border-b-2 border-yellow-500" : ""
           }`}
         >
           Home
@@ -23,7 +23,7 @@ const path=usePathname();
         <Link
           href="/products"
           className={`hover:text-yellow-500 font-semibold transition-colors ${
-            path === "/products" ? "border-b-2 border-sky-500" : ""
+            path === "/products" ? "border-b-2 border-yellow-500" : ""
           }`}
         >
           Products
@@ -33,7 +33,7 @@ const path=usePathname();
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-md px-4 lg:px-8 ">
+    <div className="navbar  shadow-md px-4 lg:px-8 bg-sky-400">
       <div className="navbar-start">
         {/* Mobile Dropdown */}
         <div className="dropdown">
@@ -48,14 +48,14 @@ const path=usePathname();
         </div>
         
         {/* Logo */}
-        <Link href="/" className="btn btn-ghost text-2xl font-bold tracking-tight">
+        <Link href="/" className="btn btn-ghost text-2xl font-bold tracking-tight text-white">
           <span className="text-yellow-500">Sun</span>Cart
         </Link>
       </div>
 
       {/* Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-6">
+        <ul className="menu menu-horizontal px-1 gap-6 text-white">
           {navLinks}
         </ul>
       </div>
@@ -63,7 +63,7 @@ const path=usePathname();
       {/* Action Area */}
       <div className="navbar-end gap-4">
         <Link 
-          href="/login" 
+          href="Login" 
           className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
         >
           Login

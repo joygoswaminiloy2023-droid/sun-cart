@@ -39,12 +39,13 @@ export default async function Home() {
      
          <SummerCare></SummerCare>
 
-         <TopBrands></TopBrands>
+        
        
         </div>
 
 
       </div>
+       <TopBrands></TopBrands>
     </main>
 
     

@@ -14,11 +14,11 @@ const brands = [
   { name: "Ray Ban", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ray-Ban_logo.svg/1280px-Ray-Ban_logo.svg.png" }
 ];
     return (
-        <div className="py-10 bg-linear-to-r from-yellow-50 to-orange-100">
+        <div className="py-10 bg-linear-to-r from-yellow-50 to-orange-100 rounded-2xl">
             <h2 className="text-2xl font-bold text-center mb-6">Top Summer Brands</h2>
 
-            <Marquee   pauseOnHover="true">
-                <div className="flex gap-6">
+            <Marquee   pauseOnHover="true" speed={200}>
+                <div className="flex gap-16">
                     {brands.map((item, ind) => (
                         <div
                             key={ind}
