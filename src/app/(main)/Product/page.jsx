@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Card from '@/app/Components/Card';
 
 
 const page = async() => {
