@@ -9,9 +9,7 @@ import { BiHash, BiLoaderAlt } from 'react-icons/bi';
 import { authClient } from '@/lib/auth-client';
 import Modal from '@/app/Components/Modal';
 
-export const metadata = {
-  title: "Sun_Cart-Profile",
-};
+
 
 
 const ProfileCardUI = () => {
