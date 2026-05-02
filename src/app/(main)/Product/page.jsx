@@ -1,5 +1,9 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Sun_Cart-Products",
+ 
+};
 
 
 const page = async() => {

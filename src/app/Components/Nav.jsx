@@ -1,5 +1,6 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -7,7 +8,6 @@ import React from 'react';
 
 const Nav = () => {
 const path=usePathname();
-console.log(path)
 
 const { data: session } = authClient.useSession()
 const user =session?.user
@@ -74,12 +74,15 @@ const user =session?.user
      {user ? (
   <div className="navbar-end flex items-center gap-4">
     {/* Logout Button */}
-    <Link 
-      href="/Login" // Usually handles a logout route or function
-      className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
-    >
-      Logout
-    </Link>
+<button 
+  onClick={async () => {
+    await authClient.signOut();
+    window.location.href = "/Login"; 
+  }}
+  className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500"
+>
+  Logout
+</button>
 
     {/* User Avatar */}
     <Link href="/Profile" className="avatar">
