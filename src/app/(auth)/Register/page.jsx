@@ -3,8 +3,23 @@
 import React from "react";
 import { FaEnvelope, FaLock, FaUser, FaImage, FaGoogle } from "react-icons/fa";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
+
+      const {
+      register,
+      handleSubmit,
+      watch,
+      formState: { errors },
+    } = useForm()
+  
+  const handlereg=(data)=>{
+    console.log(data)
+  }
+  
+  
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden ">
       
@@ -25,43 +40,65 @@ const Register = () => {
            <span className='text-yellow-500'> Sun </span>Cart
         </p>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit(handlereg)}>
 
           <div className="relative">
             <FaUser className="absolute left-3 top-3 text-gray-500" />
-            <input
+            <input {...register("Name", { required: "Required" })}
               type="text"
               placeholder="Full Name"
               className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
+            {errors.Name && <p className="text-red-500">{errors.Name.message}</p>}
           </div>
 
           <div className="relative">
             <FaImage className="absolute left-3 top-3 text-gray-500" />
-            <input
+            <input {...register("Photo", { required: true })}
               type="text"
               placeholder="Photo URL"
               className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
+             {errors.Photo && <p className="text-red-500">{errors.Name.message}</p>}
           </div>
 
           <div className="relative">
             <FaEnvelope className="absolute left-3 top-3 text-gray-500" />
-            <input
+            <input {...register("Email", { required: "Required" })}
               type="email"
               placeholder="Email address"
               className="w-full pl-10 pr-4 py-2 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
+            {errors.Email && <p className="text-red-500">{errors.Email.message}</p>}
           </div>
 
-          <div className="relative">
-            <FaLock className="absolute left-3 top-3 text-gray-500" />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full pl-10 pr-4 py-2 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            />
-          </div>
+             <div className="relative">
+        <FaLock className="absolute left-3 top-3 text-gray-500" />
+       <input
+  type="password"
+  placeholder="Password"
+  className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-800"
+  {...register("password", {
+    required: "Password cannot be empty",
+
+    minLength: {
+      value: 8,
+      message: "Password must be at least 8 characters",
+    },
+
+    pattern: {
+      value: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
+      message:
+        "Must include uppercase, number, and special character",
+    },
+  })}
+/>
+        {errors.password && (
+  <span className="text-red-500 text-sm">
+    {errors.password.message}
+  </span>
+)}
+</div>
 
           <button className="w-full bg-yellow-400 text-white py-2 rounded-lg hover:bg-sky-400 transition">
             Register

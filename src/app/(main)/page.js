@@ -11,7 +11,7 @@ export default async function Home() {
 
   const res = await product(); 
   
-  console.log(res); // This will now log your JSON data
+  console.log(res); 
 
   return (
     <>
