@@ -3,11 +3,17 @@ import { FaShoppingCart } from "react-icons/fa";
 import Card from "../Components/Card";
 import Hero from "../Components/Hero";
 import SummerCare from "../Components/SummerCare";
-import { product } from "../db/db";
+
 import { MdTipsAndUpdates } from "react-icons/md";
 import TopBrands from "../Components/TopBrands";
 
 export default async function Home() {
+ const product=async()=>{
+      const res=await fetch("http://localhost:3000/data.json");
+      const data= await res.json()
+      return data;
+  }
+  
 
   const res = await product(); 
   
