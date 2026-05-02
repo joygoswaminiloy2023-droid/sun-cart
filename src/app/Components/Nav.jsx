@@ -11,7 +11,7 @@ console.log(path)
 
 const { data: session } = authClient.useSession()
 const user =session?.user
-console.log(user)
+
   const navLinks = (
       <>
       <li>
