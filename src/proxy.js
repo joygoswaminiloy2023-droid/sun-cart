@@ -17,6 +17,6 @@ export async function proxy(request) {
 }
 
 export const config = {
-  // Matches root and the Popularproducts dynamic routes
+
   matcher: [ '/Popularproducts/:path*','/Product'],
 };
