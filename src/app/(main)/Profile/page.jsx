@@ -14,13 +14,13 @@ const ProfileCardUI = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
-  // State hooks - initialized with parentheses ()
+
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [isUpdating, setIsUpdating] = useState(false);
 
-  // Preload user data into inputs when session loads
+
   useEffect(() => {
     if (user) {
       setName(user.name || '');

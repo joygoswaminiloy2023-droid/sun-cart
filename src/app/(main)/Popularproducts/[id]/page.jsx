@@ -5,13 +5,11 @@ import { notFound } from 'next/navigation';
 
 const Details = async({params}) => {
     const res=await params;
-  
-  
-    
+
     
     const products=await product();
     console.log(products);
-const singleproduct=products.find(p=>p.id===res.id)
+const singleproduct=products.find(p=>p.id==res.id)
 
 if(!singleproduct){
     return notFound();
