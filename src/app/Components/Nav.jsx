@@ -102,7 +102,7 @@ const user =session?.user
       href="/Login" 
       className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
     >
-      Login
+      Login / Register
     </Link>
   </div>
 )}
