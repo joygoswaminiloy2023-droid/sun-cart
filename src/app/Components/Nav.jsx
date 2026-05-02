@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -7,6 +8,10 @@ import React from 'react';
 const Nav = () => {
 const path=usePathname();
 console.log(path)
+
+const { data: session } = authClient.useSession()
+const user =session?.user
+console.log(user)
   const navLinks = (
       <>
       <li>
@@ -65,27 +70,39 @@ console.log(path)
         </ul>
       </div>
 
-      {/* Action Area */}
-      <div className="navbar-end gap-4">
-        <Link 
-          href="Login" 
-          className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
-        >
-          Login
-        </Link>
+      
+     {user ? (
+  <div className="navbar-end flex items-center gap-4">
+    {/* Logout Button */}
+    <Link 
+      href="/Login" // Usually handles a logout route or function
+      className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
+    >
+      Logout
+    </Link>
 
-        <div className="avatar">
-          <div className="w-10 h-10 rounded-full ring-2 ring-yellow-500 ring-offset-base-100 ring-offset-2 cursor-pointer">
-            <Image 
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" 
-              width={40} 
-              height={40} 
-              alt="User profile"
-              className="rounded-full"
-            />
-          </div>
-        </div>
+    {/* User Avatar */}
+    <Link href="/Profile" className="avatar">
+      <div className="w-10 h-10 rounded-full ring-2 ring-yellow-500 ring-offset-base-100 ring-offset-2 cursor-pointer overflow-hidden">
+        <Image 
+          src={user.image || "/default-avatar.png"} // Fallback image check
+          width={40} 
+          height={40} 
+          alt="User profile"
+        />
       </div>
+    </Link>
+  </div>
+) : (
+  <div className="navbar-end">
+    <Link 
+      href="/Login" 
+      className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
+    >
+      Login
+    </Link>
+  </div>
+)}
     </div>
   );
 };

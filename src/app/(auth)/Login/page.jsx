@@ -3,6 +3,8 @@ import React from 'react';
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaGoogle, FaLock } from "react-icons/fa";
 import { useForm } from 'react-hook-form';
+import { authClient } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -15,9 +17,30 @@ const Login = () => {
     formState: { errors },
   } = useForm()
 
-const handlelogin=(data)=>{
-  console.log(data)
+const handlelogin= async(data)=>{
 
+const{Email,password}=data;
+
+    const {data:res,error}= await authClient.signIn.email({
+  
+    email: Email,
+    password:password,
+    callbackURL:"/",
+});
+
+if(error){
+toast.error(error.message)
+}
+if(res){
+toast.success(`Welcome to News Portal, ${data.name}`);
+}
+
+}
+
+const handlegoogle=async()=>{
+   const data = await authClient.signIn.social({
+    provider: "google",
+  });
 }
 
     return (
@@ -112,7 +135,7 @@ const handlelogin=(data)=>{
           </div>
 
           <div className="flex gap-4">
-            <button 
+            <button  onClick={handlegoogle}
               type="button" 
               className="flex-1 flex items-center justify-center gap-2 bg-sky-400 hover:bg-yellow-400 text-white py-2 rounded-lg transition-all active:scale-95 shadow-sm font-medium"
             >

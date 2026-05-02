@@ -4,6 +4,8 @@ import React from "react";
 import { FaEnvelope, FaLock, FaUser, FaImage, FaGoogle } from "react-icons/fa";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
@@ -14,11 +16,32 @@ const Register = () => {
       formState: { errors },
     } = useForm()
   
-  const handlereg=(data)=>{
-    console.log(data)
+  const handlereg= async(data)=>{
+    
+const{Name,Photo,Email,password}=data;
+
+    const {data:res,error}= await authClient.signUp.email({
+   name: Name,
+    email: Email,
+    password:password,
+    image:Photo,
+    callbackURL:"/Login",
+});
+
+if(error){
+toast.error(error.message)
+}
+if(res){
+toast.success(`Welcome to News Portal, ${data.name}`);
+}
+
   }
   
-  
+  const handlegoogle=async()=>{
+     const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  }
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden ">
@@ -120,7 +143,7 @@ const Register = () => {
           </div>
 
           <div className="flex gap-4">
-            <button 
+            <button onClick={handlegoogle}
               type="button" 
               className="flex-1 flex items-center justify-center gap-2 bg-sky-400 hover:bg-yellow-400 text-white py-2 rounded-lg transition-all active:scale-95 shadow-sm font-medium"
             >

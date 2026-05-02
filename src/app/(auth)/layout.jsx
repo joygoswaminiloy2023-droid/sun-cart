@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 
 
 const Authlayout = ({children}) => {
@@ -5,6 +6,7 @@ const Authlayout = ({children}) => {
         <div className=''>
            
             {children}
+            <ToastContainer position="top-center" />
         </div>
     );
 };

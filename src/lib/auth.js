@@ -1,22 +1,24 @@
 import { betterAuth } from "better-auth";
-import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { MongoClient } from "mongodb";
-
-
+import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 const client = new MongoClient(process.env.MONGO_URI);
-const db = client.db("Sun_Cart");
-
+const db = client.db("Sun_cart");
 
 export const auth = betterAuth({
   database: mongodbAdapter(db, {
-  
-    client
+ 
+    client,
   }),
  emailAndPassword: { 
     enabled: true, 
   },
+    socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    },
 
-
+}
 
 });
