@@ -1,5 +1,5 @@
 import React from 'react';
-import { product } from '../../db/db'
+import { product } from '../../../db/db'
 import Details_card from '@/app/Components/Details_card';
 import { notFound } from 'next/navigation';
 

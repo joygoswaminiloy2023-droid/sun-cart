@@ -50,7 +50,7 @@ const Card = ({ product }) => {
 
         
         <div className="card-actions">
-          <Link href={`/${product.id}`} className="btn btn-block bg-yellow-500 hover:bg-orange-400 border-none text-white font-bold transition-colors">
+          <Link href={`/Popularproducts/${product.id}`} className="btn btn-block bg-yellow-500 hover:bg-orange-400 border-none text-white font-bold transition-colors">
             View Details
           </Link >
         </div>
