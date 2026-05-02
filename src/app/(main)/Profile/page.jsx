@@ -27,6 +27,7 @@ const ProfileCardUI = () => {
 
   useEffect(() => {
     if (user) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setName(user.name || '');
       setImage(user.image || '');
     }

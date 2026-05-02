@@ -3,17 +3,6 @@ import { product } from '../../../db/db'
 import Details_card from '@/app/Components/Details_card';
 import { notFound } from 'next/navigation';
 
-export const generateMetadata = async ({ params }) => {
-    const { id } = await params;
-
-    const products = await product(); 
-    const singleProduct = products.find(p => p.id == id);
-    console.log(singleProduct.name)
-
-    return {
-        title: singleProduct.name,
-    };
-};
 
 const Details = async({params}) => {
     const res=await params;
