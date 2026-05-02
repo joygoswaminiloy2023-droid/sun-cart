@@ -12,7 +12,7 @@ const EditProfilePage = () => {
   const [image, setImage] = useState('');
   const [isUpdating, setIsUpdating] = useState(false);
 
-  // Sync session data to local state
+ 
   useEffect(() => {
     if (session?.user) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
