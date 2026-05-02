@@ -8,7 +8,7 @@ const Details = async ({ params }) => {
     const product_id = Number(id);
 
 
-    const res = await fetch("http://localhost:3000/data.json");
+    const res = await fetch("https://sun-cart-self.vercel.app/data.json");
     
     if (!res.ok) {
         return notFound();
