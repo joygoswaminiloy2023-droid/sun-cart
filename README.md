@@ -30,18 +30,33 @@
 
 ### User Experience
 <table width="100%">
+  <!-- Top Row: Main App Views -->
   <tr>
     <td width="50%" align="center">
+      <h3>🏠 Home View</h3>
+      <img src="./UI/Home.png" alt="Sun Cart Home Dashboard" width="100%">
+    </td>
+    <td width="50%" align="center">
+      <h3>🛍️ Products Catalog</h3>
+      <img src="./UI/Products.png" alt="Products Grid View" width="100%">
+    </td>
+  </tr>
+  <!-- Middle Row: User Dashboard -->
+  <tr>
+    <td width="100%" colspan="2" align="center">
       <h3>👤 User Profile</h3>
       <img src="./UI/Profile.png" alt="Profile Management Screen" width="100%">
+    </td>
+  </tr>
+  <!-- Bottom Row: Authentication Gates -->
+  <tr>
+    <td width="50%" align="center">
+      <h3>🔑 Login Page</h3>
+      <img src="./UI/Login.png" alt="User Login Gateway" width="100%">
     </td>
     <td width="50%" align="center">
       <h3>📝 Registration</h3>
       <img src="./UI/Signup.png" alt="Create Account Page" width="100%">
-    </td>
-    <td width="50%" align="center">
-      <h3>📝Login</h3>
-      <img src="./UI/Login.png" alt="Create Account Page" width="100%">
     </td>
   </tr>
 </table>
