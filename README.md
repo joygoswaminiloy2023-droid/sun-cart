@@ -39,6 +39,10 @@
       <h3>📝 Registration</h3>
       <img src="./UI/Signup.png" alt="Create Account Page" width="100%">
     </td>
+    <td width="50%" align="center">
+      <h3>📝Login</h3>
+      <img src="./UI/Login.png" alt="Create Account Page" width="100%">
+    </td>
   </tr>
 </table>
 
