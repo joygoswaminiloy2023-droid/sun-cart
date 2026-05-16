@@ -1,22 +1,53 @@
-import { NextResponse } from "next/server";
-import { auth } from "@/lib/auth"; // Ensure this path matches your structure
-import { headers } from "next/headers";
+//index.js template
 
-export async function proxy(request) {
-  // Use the standard BetterAuth session check for middleware
-  const session = await auth.api.getSession({
-    headers: await headers(), 
-  });
+const dotenv=require('dotenv')
+const cors=require('cors')
+dotenv.config();
+const express=require('express')
 
-  if (session) {
-    return NextResponse.next();
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const Port=process.env.PORT;
+const app=express();
+app.use(cors())
+app.use(express.json())
+
+
+
+
+
+const uri = process.env.MONGODB_URI;
+
+
+app.listen(Port,()=>{
+    console.log(`server Running on ${Port}`)
+})
+
+
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
   }
+});
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
 
-  // Redirect to Login if no session exists
-  return NextResponse.redirect(new URL('/Login', request.url));
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+  
+  }
 }
+run().catch(console.dir);
 
-export const config = {
+app.get('/',(req,res)=>{
+    res.send("Server Is Running Fine")
+})
 
-  matcher: [ '/Popularproducts/:path*','/Product'],
-};
+
+
